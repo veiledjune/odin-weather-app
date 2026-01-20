@@ -46,17 +46,17 @@ export function render(weatherData) {
     const weatherCurrentTemp = createElement(
       'span',
       'weather-current-temp',
-      `Current Temperature: ${currentTemp}\u00B0C;`,
+      `Current Temperature: ${currentTemp}\u00B0`,
     );
     const weatherMaxTemp = createElement(
       'span',
       'weather-current-temp',
-      `Current Temperature: ${maxTemp}\u00B0C`,
+      `Current Temperature: ${maxTemp}\u00B0`,
     );
     const weatherMinTemp = createElement(
       'span',
       'weather-current-temp',
-      `Current Temperature: ${minTemp}\u00B0C`,
+      `Current Temperature: ${minTemp}\u00B0`,
     );
 
     const windSpeed = weatherData.days[i].windspeed;
