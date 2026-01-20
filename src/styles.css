@@ -1,0 +1,29 @@
+/*General*/
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('fonts/Roboto/Roboto-Regular.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('fonts/Roboto/Roboto-Bold.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 700;
+}
+
+:root {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
