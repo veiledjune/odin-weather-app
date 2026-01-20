@@ -27,3 +27,76 @@ button {
   margin: 0;
   padding: 0;
 }
+
+/*Header*/
+
+.header {
+  display: flex;
+  align-items: center;
+  background-color: rgb(62, 142, 156);
+  padding: 2.5em 2em;
+  justify-content: space-around;
+}
+
+.header-weather-container {
+  display: flex;
+  gap: 1em;
+}
+
+.header-title {
+  color: White;
+}
+
+.weather-form {
+  background-color: lightblue;
+  position: relative;
+}
+
+.weather-form label {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+#weather-searchbar {
+  border: none;
+  padding: 8px 40px;
+  border-radius: 2px;
+  width: 400px;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+#weather-searchbar:focus {
+  outline: 1px solid black;
+}
+
+.weather-search-btn {
+  position: absolute;
+  left: 5px;
+  top: 3px;
+  background-color: transparent;
+}
+
+.weather-search-btn img {
+  width: 25px;
+}
+
+.header-toggle-btn {
+  padding: 5px 15px;
+  font-size: 1rem;
+  border-radius: 50px;
+  background-color: rgb(255, 255, 255);
+}
+
+.--active {
+  font-weight: 700;
+}
