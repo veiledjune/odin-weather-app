@@ -104,10 +104,18 @@ button {
 
 .main {
   padding: 1em 2em;
+  display: flex;
+  flex-direction: column;
 }
 
 .main-title {
   text-align: center;
+}
+
+.unit-span {
+  align-self: center;
+  margin-top: 1em;
+  font-size: 1.5rem;
 }
 
 .weather-card-container {
