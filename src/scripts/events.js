@@ -11,6 +11,7 @@ export const events = (() => {
 
   const unitButtonEvents = () => {
     const toggleUnitButton = document.querySelector('.header-toggle-btn');
+    const unitDisplaySpan = document.querySelector('.unit-span');
     const celsiusSpan = document.querySelector('.celsius-span');
     const fahrenheitSpan = document.querySelector('.fahrenheit-span');
     toggleUnitButton.addEventListener('click', async () => {
@@ -18,9 +19,11 @@ export const events = (() => {
       if (celsiusSpan.classList.contains('--active')) {
         celsiusSpan.classList.remove('--active');
         fahrenheitSpan.classList.add('--active');
+        unitDisplaySpan.textContent = 'F\u00B0';
       } else {
         fahrenheitSpan.classList.remove('--active');
         celsiusSpan.classList.add('--active');
+        unitDisplaySpan.textContent = 'C\u00B0';
       }
       search();
     });
