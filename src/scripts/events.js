@@ -3,8 +3,11 @@ import { render } from './render';
 
 export const events = (() => {
   const weatherFormEvents = () => {
+    const weatherForm = document.querySelector('.weather-form');
     const searchButton = document.querySelector('.weather-search-btn');
-    searchButton.addEventListener('click', async () => {
+    searchButton.addEventListener('click', async () => search());
+    weatherForm.addEventListener('submit', (e) => {
+      e.preventDefault();
       search();
     });
   };
@@ -32,10 +35,13 @@ export const events = (() => {
 })();
 
 async function search() {
+  const weatherForm = document.querySelector('.weather-form');
   const searchInput = document.getElementById('weather-searchbar');
   const location = searchInput.value;
-  if (location) {
-    const weatherData = await app.getWeatherObject(location);
-    render(weatherData);
+  if (!location) {
+    weatherForm.reportValidity();
+    return;
   }
+  const weatherData = await app.getWeatherObject(location);
+  render(weatherData);
 }
