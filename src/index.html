@@ -8,22 +8,27 @@
   <body>
     <header class="header">
       <h1 class="header-title">Odin Weather App</h1>
-      <form class="weather-form">
-        <input
-          type="text"
-          class="header-searchbar"
-          placeholder="Address, City or Zip Code"
-          required
-        />
-        <button type="button">
-          <img src="icons/search.svg" alt="Search" />
+      <div class="header-weather-container">
+        <form class="weather-form">
+          <label for="weather-searchbar"
+            >Search by address, city or zip code</label
+          >
+          <input
+            type="text"
+            id="weather-searchbar"
+            placeholder="Address, City or Zip Code"
+            required
+          />
+          <button class="weather-search-btn" type="button">
+            <img src="icons/search.svg" alt="Search" />
+          </button>
+        </form>
+        <button class="header-toggle-btn">
+          <span class="celsius-span">C&#176;</span>
+          /
+          <span class="fahrenheit-span">F&#176;</span>
         </button>
-      </form>
-      <button class="header-toggle-scale">
-        <span class="celsius-span">C&#176;</span>
-        /
-        <span class="fahrenheit-span">F&#176;</span>
-      </button>
+      </div>
     </header>
     <main class="main">
       <h2 class="main-title">Weekly Forecast</h2>
