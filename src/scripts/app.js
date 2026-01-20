@@ -1,10 +1,10 @@
 export const app = (() => {
   let unitGroup = 'metric';
-  const getWeatherData = async (location, unit) => {
+  const getWeatherData = async (location) => {
     const apiKey = 'QE58399HK3Y6CN2DJ2QAQKKNG';
     try {
       const response = await fetch(
-        `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}}?unitGroup=${unit}&key=${apiKey}
+        `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}}?unitGroup=${unitGroup}&key=${apiKey}
   `,
       );
       const weatherData = await response.json();
@@ -14,10 +14,14 @@ export const app = (() => {
     }
   };
 
-  const getWeatherObject = async (location, unit) => {
-    const weatherData = await getWeatherData(location, unit);
+  const getWeatherObject = async (location) => {
+    const weatherData = await getWeatherData(location);
     return weatherData;
   };
 
-  return { getWeatherObject };
+  const toggleUnitGroup = () => {
+    unitGroup === 'metric' ? (unitGroup = 'us') : (unitGroup = 'metric');
+  };
+
+  return { getWeatherObject, toggleUnitGroup };
 })();
