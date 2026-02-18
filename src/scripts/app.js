@@ -23,5 +23,7 @@ export const app = (() => {
     unitGroup === 'metric' ? (unitGroup = 'us') : (unitGroup = 'metric');
   };
 
-  return { getWeatherObject, toggleUnitGroup };
+  const getUnitGroup = () => unitGroup;
+
+  return { getWeatherObject, toggleUnitGroup, getUnitGroup };
 })();
