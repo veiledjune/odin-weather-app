@@ -1,3 +1,5 @@
+import { app } from './app';
+
 export function render(weatherData) {
   const weatherCardContainer = document.querySelector(
     '.weather-card-container',
@@ -40,23 +42,24 @@ export function render(weatherData) {
     weatherConditionContainer.append(weatherConditionIcon, weatherCondition);
 
     const currentTemp = weatherData.days[i].temp;
+    const currentUnit = app.getUnitGroup() === 'metric' ? 'C' : 'F';
     const maxTemp = weatherData.days[i].tempmax;
     const minTemp = weatherData.days[i].tempmin;
 
     const weatherCurrentTemp = createElement(
       'span',
       'weather-current-temp',
-      `Current Temperature: ${currentTemp}\u00B0`,
+      `Current Temperature: ${currentTemp}\u00B0${currentUnit}`,
     );
     const weatherMaxTemp = createElement(
       'span',
       'weather-current-temp',
-      `Max Temperature: ${maxTemp}\u00B0`,
+      `Max Temperature: ${maxTemp}\u00B0${currentUnit}`,
     );
     const weatherMinTemp = createElement(
       'span',
       'weather-current-temp',
-      `Min Temperature: ${minTemp}\u00B0`,
+      `Min Temperature: ${minTemp}\u00B0${currentUnit}`,
     );
 
     const windSpeed = weatherData.days[i].windspeed;
